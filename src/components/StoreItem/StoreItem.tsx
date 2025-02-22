@@ -38,7 +38,7 @@ const StoreItem = ({ item, index, addToCart }: StoreItemProps) => {
 				/>
 			</figure>
 
-			<div className="card-body pt-0">
+			<div className="card-body p-0 sm:p-8  pt-0">
 				<div className="text-lg font-semibold text-primary ">
 					£{cost.toFixed(2)}
 				</div>

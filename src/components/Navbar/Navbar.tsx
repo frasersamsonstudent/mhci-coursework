@@ -16,7 +16,7 @@ const Navbar = ({ itemsInBasket }: NavbarProps) => {
 		>
 			<nav className="navbar shadow-sm">
 				<div className="flex-1">
-					<a className="btn btn-ghost text-xl">MHCI Shop</a>
+					<a className="btn btn-ghost text-xl">MHCI Voice Shop</a>
 				</div>
 				<Basket basketItems={itemsInBasket} />
 			</nav>
