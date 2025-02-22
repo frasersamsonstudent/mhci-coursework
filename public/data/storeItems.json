@@ -1,0 +1,74 @@
+[
+	{
+		"name": "Pencil Sharpener",
+		"description": "Small metal pencil sharpener",
+		"cost": 1.99,
+		"imageUrl": "https://images.unsplash.com/photo-1624383416434-3d5fda7dc9a0"
+	},
+	{
+		"name": "Calculator",
+		"description": "Portable plastic calculator",
+		"cost": 15.0,
+		"imageUrl": "https://images.unsplash.com/photo-1626266061368-46a8f578ddd6"
+	},
+	{
+		"name": "Leather Journal",
+		"description": "Small leather journal for taking notes and organising work",
+		"cost": 25,
+		"imageUrl": "https://images.unsplash.com/photo-1583341655648-78bdf4ed6d13"
+	},
+	{
+		"name": "Pencil Holder",
+		"description": "",
+		"cost": 5.49,
+		"imageUrl": "https://images.unsplash.com/photo-1510936994138-07e06c7c5add"
+	},
+	{
+		"name": "Pencils",
+		"description": "Collection of pencils for writing, in a range of different colours",
+		"cost": 1.5,
+		"imageUrl": "https://images.unsplash.com/photo-1562247527-8b6db642ee3b"
+	},
+	{
+		"name": "Compass",
+		"description": "Metal compass for drawing perfect circles",
+		"cost": 4,
+		"imageUrl": "https://images.unsplash.com/photo-1624275169218-8cdb7d966a26"
+	},
+	{
+		"name": "Whiteboard",
+		"description": "Whiteboard for writing notes and drawing sketches",
+		"cost": 15,
+		"imageUrl": "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?q=80"
+	},
+	{
+		"name": "Highlighter Pens",
+		"description": "Selection of coloured highlighter pens",
+		"imageUrl": "https://images.unsplash.com/photo-1580569214296-5cf2bffc5ccd",
+		"cost": 4.5
+	},
+	{
+		"name": "Sticky Notes",
+		"description": "Small, coloured pieces of paper with glue on the back, made for temporary notes",
+		"imageUrl": "https://images.unsplash.com/photo-1580934174026-8142803ebb5b",
+		"cost": 8
+	},
+	{
+		"name": "Paper Clips",
+		"imageUrl": "https://images.unsplash.com/photo-1512278753435-c834ff8a597a",
+		"description": "Small platic paper clips for organising your documents",
+		"cost": 1.5
+	},
+	{
+		"name": "Pen",
+		"cost": 7,
+		"description": "High quality note-taking pen",
+		"imageUrl": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd"
+	},
+	{
+		"name": "White Paper",
+		"description": "Sheets of A4 paper",
+		"cost": 0.5,
+		"imageUrl": "https://images.unsplash.com/photo-1615800098779-1be32e60cca3"
+	}
+]
