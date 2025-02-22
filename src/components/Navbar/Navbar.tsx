@@ -1,12 +1,14 @@
 import { StoreItemObj } from "src/types/interfaces";
 import Basket from "../Basket/Basket";
+import ListeningIcon from "../ListeningIcon/ListeningIcon";
 
 interface NavbarProps {
 	itemsInBasket: StoreItemObj[];
 	setBasket: Function;
+	isListening: boolean;
 }
 
-const Navbar = ({ itemsInBasket }: NavbarProps) => {
+const Navbar = ({ itemsInBasket, isListening }: NavbarProps) => {
 	return (
 		<div
 			className="
@@ -16,8 +18,11 @@ const Navbar = ({ itemsInBasket }: NavbarProps) => {
 		>
 			<nav className="navbar shadow-sm">
 				<div className="flex-1">
-					<a className="btn btn-ghost text-xl">MHCI Voice Shop</a>
+					<a className="btn btn-ghost text-xl">
+						MHCI Voice Shop {isListening ? <ListeningIcon /> : null}
+					</a>
 				</div>
+
 				<Basket basketItems={itemsInBasket} />
 			</nav>
 		</div>

@@ -6,7 +6,7 @@ interface AppIntroductionProps {
 
 const AppIntroduction = ({ hideIntro }: AppIntroductionProps) => {
 	return (
-		<div className="prose m-auto mt-1">
+		<div className="prose m-auto mt-5 px-3">
 			<h2>App Explanation and Introduction</h2>
 			<p>
 				This application demonstrates how speech can be used as an input

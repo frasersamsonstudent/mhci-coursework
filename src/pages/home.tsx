@@ -11,7 +11,6 @@ import AppIntroduction from "../components/AppIntroduction/AppIntroduction";
 const Home = () => {
 	const [allShopItems, setAllShopItems] = useState<StoreItemObj[]>([]);
 	const [itemsInBasket, setItemsInBasket] = useState<any>([]);
-	const [isListening, setIsListening] = useState<boolean>(false);
 	const [showIntro, setShowIntro] = useState<boolean>(true);
 
 	useEffect(() => {
@@ -39,11 +38,6 @@ const Home = () => {
 	};
 
 	const startListeningToSpeech = () => {
-		if (isListening) {
-			console.error("Already listening");
-			return;
-		}
-
 		const doesBrowserSupportSpeechRecognition =
 			"SpeechRecognition" in window ||
 			"webkitSpeechRecognition" in window;
@@ -117,6 +111,7 @@ const Home = () => {
 			<Navbar
 				itemsInBasket={itemsInBasket}
 				setBasket={setItemsInBasket}
+				isListening={true}
 			/>
 			{allShopItems.length ? (
 				<StoreItemList
