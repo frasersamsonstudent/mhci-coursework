@@ -17,6 +17,7 @@ const StoreItemList = ({ allShopItems, setItems }: StoreItemListProps) => {
 				<StoreItem
 					key={index}
 					item={item}
+					index={index}
 					addToCart={() => addItemToBasket(index)}
 				/>
 			))}

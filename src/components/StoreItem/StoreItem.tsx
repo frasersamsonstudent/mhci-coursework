@@ -4,9 +4,10 @@ import { StoreItemObj } from "src/types/interfaces";
 interface StoreItemProps {
 	item: StoreItemObj;
 	addToCart(): void;
+	index: number;
 }
 
-const StoreItem = ({ item, addToCart }: StoreItemProps) => {
+const StoreItem = ({ item, index, addToCart }: StoreItemProps) => {
 	const [showAddedEffect, setShowAddedEffect] = useState<boolean>(false);
 	const { name, description, cost, imageUrl } = item;
 
@@ -48,6 +49,7 @@ const StoreItem = ({ item, addToCart }: StoreItemProps) => {
 
 				<div className="card-actions mt-4">
 					<button
+						id={`add-to-cart-item-${index}`}
 						className="btn btn-soft btn-primary w-full"
 						onClick={onAddToCartClicked}
 					>
