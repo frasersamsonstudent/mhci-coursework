@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 import { StoreItemObj } from "src/types/interfaces";
 import StoreItem from "../StoreItem/StoreItem";
 
@@ -8,7 +10,10 @@ interface StoreItemListProps {
 
 const StoreItemList = ({ allShopItems, setItems }: StoreItemListProps) => {
 	const addItemToBasket = (index: number) => {
-		setItems((items: any) => [...items, allShopItems[index]]);
+		const newItem = { ...allShopItems[index] };
+
+		setItems((items: any) => [...items, newItem]);
+		toast.success(`Added ${newItem.name} to basket`, { autoClose: 2500 });
 	};
 
 	return (
