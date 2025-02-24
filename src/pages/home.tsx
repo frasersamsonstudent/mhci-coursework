@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StoreItemList from "../components/StoreItemList/StoreItemList";
-import { StoreItemObj } from "../types/interfaces";
+import { ScrollDirection, StoreItemObj } from "../types/interfaces";
 import Navbar from "../components/Navbar/Navbar";
 import ShopLoading from "../components/ShopLoading/ShopLoading";
 import AppIntroduction from "../components/AppIntroduction/AppIntroduction";
@@ -124,7 +124,9 @@ const Home = () => {
 		}
 
 		const index = allShopItems.indexOf(item);
-		// document.getElementById(`store-item-${index}`)?.scrollIntoView();
+		document
+			.getElementById(`store-item-${index}`)
+			?.scrollIntoView({ behavior: "smooth" });
 		document.getElementById(`add-to-cart-item-${index}`)?.click();
 	};
 
@@ -157,6 +159,13 @@ const Home = () => {
 		document.getElementById("close-help-modal")?.click();
 	};
 
+	const scroll = (direction: ScrollDirection) => {
+		let amount = document.getElementById("store-item-0")?.clientHeight || 0;
+		amount = direction === "down" ? amount : -amount;
+
+		window.scrollBy({ top: amount, left: 0, behavior: "smooth" });
+	};
+
 	const handleVoiceCommand = (rawPhrase: string) => {
 		const removePunctuationRegex = /[.,]/g;
 		const userPhrase = rawPhrase.replace(removePunctuationRegex, "");
@@ -176,6 +185,8 @@ const Home = () => {
 			getRegularExpForPhrase("Close Basket"),
 			getRegularExpForPhrase("Close Cart"),
 		];
+		const scrollUpRegex = /Scroll Up/i;
+		const scrollDownRegex = /Scroll Down/i;
 
 		const addToCartRegex = /Add (.+?) to (basket|cart)/i;
 		const removeFromCartRegex = /Remove (.+?) from (basket|cart)/i;
@@ -205,6 +216,10 @@ const Home = () => {
 			closeBasketPhrases.some((expression) => expression.test(userPhrase))
 		) {
 			hideBasket();
+		} else if (scrollDownRegex.test(userPhrase)) {
+			scroll("down");
+		} else if (scrollUpRegex.test(userPhrase)) {
+			scroll("up");
 		} else {
 			console.log("No match found for: ", userPhrase);
 		}

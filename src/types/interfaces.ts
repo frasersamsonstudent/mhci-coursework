@@ -4,3 +4,5 @@ export interface StoreItemObj {
 	description: string;
 	imageUrl: string;
 }
+
+export type ScrollDirection = "up" | "down";
