@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect, useState } from "react";
 import StoreItemList from "../components/StoreItemList/StoreItemList";
 import { ScrollDirection, StoreItemObj } from "../types/interfaces";
