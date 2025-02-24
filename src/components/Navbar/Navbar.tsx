@@ -1,14 +1,16 @@
 import { StoreItemObj } from "src/types/interfaces";
 import Basket from "../Basket/Basket";
+import HelpIcon from "../HelpIcon/HelpIcon";
 import ListeningIcon from "../ListeningIcon/ListeningIcon";
 
 interface NavbarProps {
 	itemsInBasket: StoreItemObj[];
 	setBasket: Function;
 	isListening: boolean;
+	showHelp: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Navbar = ({ itemsInBasket, isListening }: NavbarProps) => {
+const Navbar = ({ itemsInBasket, isListening, showHelp }: NavbarProps) => {
 	return (
 		<div
 			className="
@@ -23,6 +25,7 @@ const Navbar = ({ itemsInBasket, isListening }: NavbarProps) => {
 					</a>
 				</div>
 
+				<HelpIcon onClick={showHelp} />
 				<Basket basketItems={itemsInBasket} />
 			</nav>
 		</div>

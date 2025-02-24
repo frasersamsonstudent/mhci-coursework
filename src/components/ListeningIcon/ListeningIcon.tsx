@@ -2,7 +2,7 @@ import "./ListeningIcon.css";
 
 const ListeningIcon = () => {
 	return (
-		<div className=" w-fit text-white px-4 py-2 rounded-full shadow-lg">
+		<div className=" w-fit text-info px-4 py-2 rounded-full shadow-lg">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"

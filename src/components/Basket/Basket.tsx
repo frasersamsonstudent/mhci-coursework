@@ -10,6 +10,16 @@ const Basket = ({ basketItems }: BasketProps) => {
 		return cost.toFixed(2);
 	};
 
+	const getBasketItemsFormattedInListWithQuantity = () => {
+		const itemsWithQuantity: { [key: string]: number } = {};
+
+		basketItems.forEach(({ name }) => {
+			itemsWithQuantity[name] = (itemsWithQuantity[name] || 0) + 1;
+		});
+
+		return Object.entries(itemsWithQuantity);
+	};
+
 	return (
 		<div className="flex-none">
 			<div className="dropdown dropdown-end">
@@ -17,6 +27,7 @@ const Basket = ({ basketItems }: BasketProps) => {
 					tabIndex={0}
 					role="button"
 					className="btn btn-ghost btn-circle"
+					id="openBasket"
 				>
 					<div className="indicator">
 						<svg
@@ -25,8 +36,10 @@ const Basket = ({ basketItems }: BasketProps) => {
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							className="size-6"
+							className="size-6 hover:opacity-90"
 						>
+							<title>View Basket</title>
+
 							<path
 								stroke-linecap="round"
 								stroke-linejoin="round"
@@ -50,12 +63,25 @@ const Basket = ({ basketItems }: BasketProps) => {
 								? `${basketItems.length} Items`
 								: "Basket is Empty"}
 						</span>
+						<ul>
+							{getBasketItemsFormattedInListWithQuantity().map(
+								([item, quantity], index) => {
+									return (
+										<li
+											key={`${item}-${quantity}-${index}`}
+										>
+											{item} - x{quantity}
+										</li>
+									);
+								}
+							)}
+						</ul>
 						<span className="text-info">
 							Subtotal: £{getBasketCost()}
 						</span>
 						<div className="card-actions">
 							<button className="btn btn-primary btn-block">
-								View cart
+								Checkout
 							</button>
 						</div>
 					</div>
