@@ -53,7 +53,7 @@ const VoiceCommandHelpModal = () => {
 						<span className="font-semibold">"Close Help"</span>
 					</li>
 				</ul>
-				<p className="pt-4 text-secondary-content">
+				<p className="pt-4">
 					Press the <span className="font-semibold">ESC</span> key,
 					click the button below, or say{" "}
 					<em className="italic text-primary">Close Help</em> to close
